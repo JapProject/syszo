@@ -1,20 +1,28 @@
 {
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "18B6ED087CB2350347B044D7EB14E726BB285843",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
     "58790bee-a18e-481e-81a8-26498b76bcb9++6690" : {
 
     }
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "18B6ED087CB2350347B044D7EB14E726BB285843" : 0,
     "58790bee-a18e-481e-81a8-26498b76bcb9++6690" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "57AD8568-5BC8-40B7-B7FA-AA5943CCC874",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "18B6ED087CB2350347B044D7EB14E726BB285843" : "syszo\/",
     "58790bee-a18e-481e-81a8-26498b76bcb9++6690" : "syszo_iOS_20160301_release_Ver1.0.5_build1\/joushisu_ios\/Tool\/SDWebImage\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "joushisu_ios",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
   "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "joushisu_ios.xcworkspace",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/JapProject\/syszo.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "18B6ED087CB2350347B044D7EB14E726BB285843"
+    },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/www.svnchina.com\/svn\/fsfactory",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
