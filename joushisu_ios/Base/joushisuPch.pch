@@ -1,0 +1,283 @@
+//
+//  joushisuPch.pch
+//  joushisu_ios
+//
+//  Created by 常宽 on 15/4/27.
+//  Copyright (c) 2015年 SGKJ. All rights reserved.
+//
+
+#ifndef joushisu_ios_joushisuPch_pch
+#define joushisu_ios_joushisuPch_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+// __OBJC__这个宏,在所有的.m和.mm文件中默认就定义了这个宏
+#ifdef __OBJC__
+// 如果这个全局的头文件或者宏只需要在.m或者.mm文件中使用,
+// 请把该头文件或宏写到#ifdef __OBJC__ 中
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "NavbarView.h"
+#import "AFHTTPRequestOperationManager.h"
+#import "UIScrollView+MJRefresh.h"
+#import "UIColor+RGB.h"
+#import "UserModel.h"
+
+#import "EnterController.h"
+#import "AppDelegate.h"
+
+#import "UIImage+WebP.h"
+#import "UIImageView+WebCache.h"
+#import "MBProgressHUD.h"
+#import "UIView UIViewSAAdditions.h"
+#import "NADView.h"
+
+/// 粗字体
+#define FONT_SIZE_6_H(i) [UIFont fontWithName:@"HiraSansOldStd-W6" size:i]
+/////
+//#define FONT_SIZE_7(i) [UIFont fontWithName:@"HiraSansOldStd-W7" size:i]
+/////
+//#define FONT_SIZE_8(i) [UIFont fontWithName:@"HiraSansOldStd-W8" size:i]
+///// 细字体
+//#define FONT_SIZE_9(i) [UIFont fontWithName:@"HiraSansOldStd-W9" size:i]
+//#define FONT_SIZE_10(i) [UIFont fontWithName:@"KozGoPro-Regular" size:i]
+#define FONT_SIZE_6(i) [UIFont fontWithName:@"KozGoPro-Regular" size:i]
+///
+#define FONT_SIZE_7(i) [UIFont fontWithName:@"KozGoPro-Regular" size:i]
+///
+#define FONT_SIZE_8(i) [UIFont fontWithName:@"KozGoPro-Regular" size:i]
+/// 细字体
+#define FONT_SIZE_9(i) [UIFont fontWithName:@"KozGoPro-Regular" size:i]
+#define FONT_SIZE_10(i) [UIFont fontWithName:@"KozGoPro-Regular" size:i]
+
+/// 字体颜色
+#define DarkGreen [UIColor colorWithRed:57/255.f green:58/255.f blue:64/255.f alpha:1]
+/// 灰白字体颜色
+#define Ashen [UIColor colorWithRed:167/255.f green:172/255.f blue:169/255.f alpha:1]
+/// cell颜色
+#define CELL_COLOR [UIColor colorWithRed:250/255.f green:250/255.f blue:250/255.f alpha:1]
+/// 字体颜色
+#define COLOR_9c1d1d [UIColor colorWithRed:156/255.f green:29/255.f blue:29/255.f alpha:1]
+/// 字体颜色
+#define COLOR_89a9ca [UIColor colorWithRed:137/255.f green:169/255.f blue:202/255.f alpha:1]
+/// 百分比字体颜色
+#define COLOR_5fa6ca [UIColor colorWithRed:95/255.f green:166/255.f blue:202/255.f alpha:1]
+/// 背景色
+#define COLOR_8b8a85 [UIColor colorWithRed:139/255.f green:138/255.f blue:133/255.f alpha:1]
+//字体黄色
+#define Yellow [UIColor colorWithRed:241/255.f green:169/255.f blue:15/255.f alpha:1]
+
+
+/// 大象选择tab颜色-off
+#define ChiebukuroTabColorOff [UIColor colorWithRed:100/255.f green:130/255.f blue:187/255.f alpha:1]
+/// 大象选择tab颜色-on
+#define ChiebukuroTabColorOn [UIColor colorWithRed:75/255.f green:94/255.f blue:134/255.f alpha:1]
+/// 熊选择tab颜色-off
+#define SystomoTabColorOff [UIColor colorWithRed:123/255.f green:166/255.f blue:188/255.f alpha:1]
+/// 熊选择tab颜色-on
+#define SystomoTabColorOn [UIColor colorWithRed:89/255.f green:120/255.f blue:135/255.f alpha:1]
+/// 鸟选择tab颜色-off
+#define SysteerTabColorOff [UIColor colorWithRed:212/255.f green:142/255.f blue:141/255.f alpha:1]
+/// 鸟选择tab颜色-on
+#define SysteerTabColorOn [UIColor colorWithRed:191/255.f green:104/255.f blue:102/255.f alpha:1]
+
+
+
+/// 下拉刷新：
+#define WILL_LODE @"引っ張って更新…"
+
+/// 松开刷新：
+#define DID_LODE @"指を離して更新…"
+
+/// 请稍后：
+#define LODEING @"お待ちください…"
+
+/// 搜索为空 弹出的字段
+#define SearchEmpty @"検索結果がありません。"
+
+/// 行间距
+#define LineSpacing 5
+#define regularExpressionUrl  @"[a-zA-z]+://[^\\s]*"
+/// 推送说明
+#define PushString @"プッシュ通知を完了するにはお手持ちのスマートフォンの「設定」＞「通知センター」＞「シス蔵」より、バッジ・サウンド・バナサウンド・バナー・ダイアログのいずれかの通知方法をオンに設定ください。"
+
+
+#define CON_WIDTH [[UIScreen mainScreen] bounds].size.width
+#define CON_HEIGHT [[UIScreen mainScreen] bounds].size.height
+#define CELL_WIDTH self.contentView.frame.size.width
+#define CELL_HEIGHT self.contentView.frame.size.height
+#define NAND_ID @"77f481a2e0cc1fa23d01b70ba419e05bb1ac1e95"
+#define NAND_SPOT_ID @"403043"
+
+//*****************网址*********************//
+//前面公有url
+#define TiTleUrl @"http://api.syszo.com/"
+//#define TiTleUrl @"http://jss-test.nestwinds.com/"
+//#define TiTleUrl @"http://xianchang.wx.vicgoo.com/"
+//#define TiTleUrl @"http://api-t.syszo.com/"
+
+//注册请求
+#define UserRegister @"index.php/login/reg"
+//登陆请求
+#define UserLogIn @"index.php/login/login"
+/// 上传设备id
+#define UserDeviceId @"index.php/login/tuisong"
+/// 重置密码
+#define UserGetPassword @"index.php/login/get_pwd"
+
+//广告
+#define adunitID @"ca-app-pub-6785819758303917/7866615388"
+
+//知惠袋列表
+#define ChiebukuroListUrl @"index.php/know/info_list"
+//知惠袋详情
+#define ChiebukuroInfoUrl @"index.php/know/info"
+//知惠袋评论列表
+#define ChiebukuroCommentsListUrl @"index.php/know/comments_list"
+//知惠袋评论内容
+#define ChiebukuroCommentsListInfoUrl @"index.php/know/comments"
+//知惠袋评论点赞
+#define ChiebukuroGoodUrl @"index.php/know/good"
+//知惠袋评论删除
+#define ChiebukuroCommentsDelUrl @"index.php/know/comments_del"
+//知惠袋评论编辑
+#define ChiebukuroCommentsEditUrl @"index.php/know/comments_edit"
+//知惠袋搜索关键字列表
+#define ChiebukuroSearchIndex @"index.php/know/search_index"
+//知惠袋搜索列表
+#define ChiebukuroSearchUrl @"index.php/know/search"
+//知惠袋发布(详情)
+#define ChiebukuroAddUrl @"index.php/know/add"
+//知惠袋发布(详情)后编辑
+#define ChiebukuroEditUrl @"index.php/know/edit"
+//知惠袋发布(详情)删除
+#define ChiebukuroDelUrl @"index.php/know/del"
+
+
+//鸟列表
+#define SysteerListUrl @"index.php/bird/info_list"
+//鸟追加
+#define SysteerAddUrl @"index.php/bird/add"
+//鸟编辑
+#define SysteerEditUrl @"index.php/bird/edit"
+//鸟详情
+#define SysteerInfoUrl @"index.php/bird/info"
+//鸟详情评论列表
+#define SysteerInfoList @"index.php/bird/bird_comments_list"
+//鸟详情评论列表-发送
+#define SysteerInfoListSender @"index.php/bird/bird_comments"
+//鸟详情评论列表-删除
+#define SysteerInfoListDel @"index.php/bird/comments_del"
+//鸟详情评论列表-编辑
+#define SysteerInfoListEdit @"index.php/bird/comments_edit"
+//鸟详情评论列表-点赞
+#define SysteerInfoListGood @"index.php/bird/good_comments"
+//鸟详情点赞
+#define SysteerGoodUrl @"index.php/bird/good"
+//鸟详情删除
+#define SysteerDeleteUrl @"index.php/bird/del"
+
+
+//上传图片
+#define SysteerPostImageUrl @"index.php/upload"
+
+/// 个人资料
+#define MyPageData @"index.php/myself/mydata"
+/// 个人发布过的文章(投稿履历)
+#define MyPageFolist @"index.php/myself/myinfolist"
+/// 个人资料修改
+#define MyPageEdit @"index.php/myself/mydata_edit"
+/// 账户密码修改
+#define MyPagePWSEdit @"index.php/myself/pwd_edit"
+
+/// 个人资料修改-地址列表
+#define MypageEditAddress @"index.php/myself/get_address"
+/// 个人资料修改-职种列表
+#define MypageEditIndustry @"index.php/myself/get_industry"
+/// 个人资料修改-职务列表
+#define MypageEditJob @"index.php/myself/get_job"
+/// 个人资料修改-使用本应用时间列表
+#define MypageEditGetUse @"index.php/myself/get_use"
+/// 个人资料修改-公司规模列表
+#define MypageEditGetSize @"index.php/myself/get_size_company"
+/// 个人资料修改-注册资金列表
+#define MypageEditGetRegMoney @"index.php/myself/get_reg_money"
+/// 个人资料修改-软件列表
+#define MypageEditGetSoft @"index.php/myself/get_software"
+/// 个人资料修改-硬件列表
+#define MypageEditGetHard @"index.php/myself/get_hardware"
+/// 个人资料修改-拥有资格列表
+#define MypageEditGetQualified @"index.php/myself/get_qualified"
+/// 个人资料修改-全年预算列表
+#define MypageEditGetAllYear @"index.php/myself/get_allyear"
+
+//  情シスパラダイス是什么
+#define JoushisuIsWhatUrl @"http://www.google.com"
+// 使用注意事项
+#define JoushisuAttentionUrl @"http://api.syszo.com/new/01.html"
+
+//  熊好友资料
+#define SystomoFriend @"index.php/chat/fdata"
+//  熊添加好友
+#define SystomoAddFriend @"index.php/chat/add_f"
+//  熊删除好友
+#define SystomoDelFriend @"index.php/chat/del_f"
+//  熊列表
+#define SystomoListUrl @"index.php/chat/f_list"
+#define SystomoGroup_read @"index.php/chat/group_read"
+//  熊 我添加过的好友
+#define SystomoListPowder @"index.php/chat/a_list"
+//  熊 加过我的人
+#define SystomoListThePowder @"index.php/chat/b_list"
+
+//  熊添加群成员
+#define SystomoAddPeopleUrl @"index.php/chat/member_add"
+//  熊添加群
+#define SystomoAddGroup @"index.php/chat/group_add"
+// 熊点击退会
+#define SystomoDelGroup @"index.php/chat/group_del"
+//熊搜索详细
+#define SystomoSearchTableUrl @"index.php/chat/check"
+//熊按钮搜索
+#define SystomoButtonInfoUrl @"index.php/chat/cat"
+
+//熊分类结果搜索
+#define SearchResultResultUrl @"index.php/chat/cat_rs"
+
+//一下6个接口作废
+//熊分类结果搜索 - 公司规模
+#define SearchResultPeopleUrl @"index.php/chat/cat_search"
+//熊分类结果搜索 - 职务
+#define SearchResultJobUrl @"index.php/chat/job_search"
+//熊分类结果搜索 - 软件
+#define SearchResultSoftwareUrl @"index.php/chat/software_search"
+//熊分类结果搜索 - 硬件
+#define SearchResultHardwareUrl @"index.php/chat/hardware_search"
+//熊分类结果搜索 - 报有资格
+#define SearchResultQualifiedUrl @"index.php/chat/qualified_search"
+//熊分类结果搜索 - 使用时间
+#define SearchResultUserTimeUrl @"index.php/chat/use_search"
+
+
+
+//修改群成员
+#define SystomoEditGroup @"index.php/chat/group_edit_1"
+//熊新建保存群主画面
+#define SystomoGropAddUrl @"index.php/chat/group_add"
+//海豚列表
+#define MessageListUrl @"index.php/message/look"
+//聊天界面
+#define ChatInfoUrl @"index.php/chat/info_list"
+//聊天消息列表
+#define ChatPushUrl @"index.php/login/tuisong"
+//发送消息
+#define ChatSendUrl @"index.php/chat/send_info"
+#ifdef DEBUG
+#define NJLog(...) NSLog(__VA_ARGS__)
+#else
+#define NJLog(...)
+#endif
+
+#endif
+
+#endif
