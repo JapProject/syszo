@@ -1,0 +1,31 @@
+PODS:
+  - AdBrix (2.0.2)
+  - AdPopcornDA (2.0.3)
+  - AdPopcornOfferwall (2.0.5)
+  - IgaworksCommerce (2.0.4)
+  - IgaworksCore (2.0.5)
+  - IgaworksCoupon (2.0.2)
+  - IgaworksNanoo (2.0.3)
+  - LiveOps (2.0.6)
+
+DEPENDENCIES:
+  - AdBrix
+  - AdPopcornDA
+  - AdPopcornOfferwall
+  - IgaworksCommerce
+  - IgaworksCore
+  - IgaworksCoupon
+  - IgaworksNanoo
+  - LiveOps
+
+SPEC CHECKSUMS:
+  AdBrix: 66c6cf97619e5a498d6ea80a86d32198110fe52a
+  AdPopcornDA: d2fb3b391537176264e370434e992f66eb84da0b
+  AdPopcornOfferwall: 55cbebd6f7e32b2e4600152a0abe9268848b2c8b
+  IgaworksCommerce: 97a059557f970fd8ad8e843cb14719d45f94516f
+  IgaworksCore: a5810546ff6190a5cc15eb7d85b88454c5b2a98b
+  IgaworksCoupon: 1cb49c6e74ed4fea203d014ac3223f4e2659b741
+  IgaworksNanoo: 8942b918ff9800324442116a43e7e7e9a208f9bd
+  LiveOps: 723358472a524775ff4b67c39338e28513036430
+
+COCOAPODS: 0.37.2
