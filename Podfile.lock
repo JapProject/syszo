@@ -1,12 +1,17 @@
 PODS:
-  - AdBrix (2.0.2)
+  - AdBrix (2.0.3)
   - AdPopcornDA (2.0.3)
   - AdPopcornOfferwall (2.0.5)
   - IgaworksCommerce (2.0.4)
-  - IgaworksCore (2.0.5)
+  - IgaworksCore (2.1.1)
   - IgaworksCoupon (2.0.2)
   - IgaworksNanoo (2.0.3)
   - LiveOps (2.0.6)
+  - SDCycleScrollView (1.62):
+    - SDWebImage (~> 3.7)
+  - SDWebImage (3.7.5):
+    - SDWebImage/Core (= 3.7.5)
+  - SDWebImage/Core (3.7.5)
 
 DEPENDENCIES:
   - AdBrix
@@ -17,15 +22,18 @@ DEPENDENCIES:
   - IgaworksCoupon
   - IgaworksNanoo
   - LiveOps
+  - SDCycleScrollView
 
 SPEC CHECKSUMS:
-  AdBrix: 66c6cf97619e5a498d6ea80a86d32198110fe52a
+  AdBrix: c66e449c07e6c4f6544c9bb628c5da20a80c63fb
   AdPopcornDA: d2fb3b391537176264e370434e992f66eb84da0b
   AdPopcornOfferwall: 55cbebd6f7e32b2e4600152a0abe9268848b2c8b
   IgaworksCommerce: 97a059557f970fd8ad8e843cb14719d45f94516f
-  IgaworksCore: a5810546ff6190a5cc15eb7d85b88454c5b2a98b
+  IgaworksCore: 3f03b839002323b59f7995d1acd6355d517e890f
   IgaworksCoupon: 1cb49c6e74ed4fea203d014ac3223f4e2659b741
   IgaworksNanoo: 8942b918ff9800324442116a43e7e7e9a208f9bd
   LiveOps: 723358472a524775ff4b67c39338e28513036430
+  SDCycleScrollView: ae016cb4cc4036523917f146ede6f7b11d408f6a
+  SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
 
 COCOAPODS: 0.37.2

@@ -26,7 +26,7 @@
 #import "EnterController.h"
 #import "AppDelegate.h"
 
-#import "UIImage+WebP.h"
+//#import "UIImage+WebP.h"
 #import "UIImageView+WebCache.h"
 #import "MBProgressHUD.h"
 #import "UIView UIViewSAAdditions.h"

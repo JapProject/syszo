@@ -7,3 +7,5 @@ pod 'IgaworksCommerce'
 pod 'IgaworksCoupon'
 pod 'IgaworksNanoo'
 pod 'LiveOps'
+pod 'SDCycleScrollView'
+

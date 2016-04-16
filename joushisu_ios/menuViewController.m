@@ -17,11 +17,13 @@
 #import "EnterController.h"
 #import "APService.h"
 #import "NADView.h"
+#import "SDCycleScrollView.h"
 @import GoogleMobileAds;
-@interface menuViewController ()<UITableViewDataSource, UITableViewDelegate,UIGestureRecognizerDelegate,NADViewDelegate>
+@interface menuViewController ()<UITableViewDataSource, UITableViewDelegate,UIGestureRecognizerDelegate,NADViewDelegate,SDCycleScrollViewDelegate>
 {
     
     GADBannerView *bannerView_;
+    SDCycleScrollView *_adScrollView;
 }
 @property (strong, nonatomic) NADView *ADView;
 @end
@@ -42,6 +44,15 @@
     view.center = temp;
     [self creatView];
     
+    //广告条
+    _adScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, self.view.width, 150) delegate:self placeholderImage:[UIImage imageNamed:@"ad"]];
+    _adScrollView.autoScrollTimeInterval = 3.0;
+    _adScrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentCenter;
+    //_adScrollView.titlesGroup = titles;
+    _adScrollView.currentPageDotColor = [UIColor whiteColor]; // 自定义分页控件小圆标颜色
+    _adScrollView.imageURLStringsGroup = self.tabArr;
+    [self.view addSubview:_adScrollView];
+    
     //添加广告 kGADAdSizeBanner 替换为 GADAdSizeFromCGSize(CGSizeMake(CON_WIDTH, 50)
 //    bannerView_ = [[GADBannerView alloc] initWithAdSize:GADAdSizeFromCGSize(CGSizeMake(CON_WIDTH, 50))
 //                                                 origin:CGPointMake(
@@ -53,6 +64,8 @@
 //    [self.view addSubview:bannerView_];
 //    [bannerView_ loadRequest:[GADRequest request]];
     
+    self.navigationController.navigationBar.hidden = YES;
+    
     self.ADView = [[NADView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 50, self.view.frame.size.width, 50) isAdjustAdSize:YES];
     [_ADView setNendID:NAND_ID spotID:NAND_SPOT_ID];
     _ADView.delegate = self;
@@ -61,6 +74,10 @@
     [self.view addSubview:_ADView];
 }
 
+
+-(void)viewDidDisappear:(BOOL)animated{
+    self.navigationController.navigationBar.hidden = NO;
+}
 #pragma mark - NADViewの広告ロードが初めて成功した際に通知されます
 - (void)nadViewDidFinishLoad:(NADView *)adView {
     _ADView.frame = CGRectMake(0, self.view.frame.size.height - _ADView.frame.size.height, self.view.frame.size.width, _ADView.frame.size.height);
@@ -70,8 +87,9 @@
 {
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 
+    self.automaticallyAdjustsScrollViewInsets = NO;
     //创建菜单
-    self.tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 150, self.view.width, self.view.height-150-50) style:UITableViewStylePlain];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     //除去线
@@ -222,6 +240,14 @@ else
 return YES;
 }
 }
+#pragma mark - SDCycleScrollViewDelegate
+
+- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index
+{
+    NSLog(@"---点击了第%ld张图片", (long)index);
+   
+}
+
 
 
 

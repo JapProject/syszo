@@ -9,10 +9,10 @@
     "18B6ED087CB2350347B044D7EB14E726BB285843" : 0,
     "58790bee-a18e-481e-81a8-26498b76bcb9++6690" : 0
   },
-  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "57AD8568-5BC8-40B7-B7FA-AA5943CCC874",
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "0724A735-B3CC-4783-AF07-80D7D18F64D9",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "18B6ED087CB2350347B044D7EB14E726BB285843" : "syszo\/",
-    "58790bee-a18e-481e-81a8-26498b76bcb9++6690" : "syszo_iOS_20160301_release_Ver1.0.5_build1\/joushisu_ios\/Tool\/SDWebImage\/"
+    "58790bee-a18e-481e-81a8-26498b76bcb9++6690" : "syszo\/joushisu_ios\/Tool\/SDWebImage\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "joushisu_ios",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
