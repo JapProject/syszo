@@ -12,6 +12,7 @@
 @property (nonatomic, strong)QHeaderModel *model;
 @property (nonatomic, strong)UILabel *date;                 // 日期时间
 @property (nonatomic, strong)UIImageView *userImageView;    // 用户名_状态图片
+@property (nonatomic, strong)UIImageView *isVipIcon;        //Vip头像
 @property (nonatomic, strong)UILabel *userName;             // 用户名_用户名
 @property (nonatomic, strong)UILabel *questionTitle;        // 问题主题
 @property (nonatomic, strong)UITextView *content;              // 问题内容

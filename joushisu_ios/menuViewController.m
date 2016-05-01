@@ -72,6 +72,39 @@
     [_ADView load];
     _ADView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:_ADView];
+    
+    [self getAdimage];
+}
+
+
+-(void)getAdimage{
+   NSString * url = [NSString stringWithFormat:@"%@%@",TiTleUrl,getAdImage];
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    [manager POST:url parameters:@{@"type":@"1"} success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"结果%@", responseObject);
+        NSString *result = [responseObject objectForKey:@"result"];
+        if ([result isEqualToString:@"1"]) {
+            NSMutableArray * imageArray = [NSMutableArray array];
+            NSDictionary * tempDic = responseObject[@"data"];
+           // for (int i=0; i<tempArray.count; i++) {
+                [imageArray addObject:[NSString stringWithFormat:@"%@%@",AdMainUrl,tempDic[@"ad_img"]]];
+            //}
+            _adScrollView.imageURLStringsGroup = imageArray;
+            if (imageArray.count ==1) {
+                _adScrollView.autoScroll = NO;
+            }
+            
+        }else{
+            NSLog(@"失败");
+            return;
+        }
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    }];
+
+
 }
 
 

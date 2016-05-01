@@ -11,6 +11,8 @@
 @interface QHeaderModel : BaseModel
 /// 内容
 @property (nonatomic, strong)NSString *content;
+
+@property (nonatomic) NSInteger vip_flg;
 /// 日期时间
 @property (nonatomic, strong)NSString *time;
 /// 标题

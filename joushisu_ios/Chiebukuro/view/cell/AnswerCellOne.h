@@ -13,6 +13,8 @@
 @property (nonatomic, strong) UILabel *dayLabel;
 @property (nonatomic, strong) UITextView *infoLabel;
 @property (nonatomic, strong) UIImageView *userImage;
+
+@property (nonatomic,strong) UIImageView * isVipIcon;
 @property (nonatomic, strong) UIImageView *asImage;
 @property (nonatomic, strong) UILabel *userLabel;
 @property (nonatomic, strong) UIButton *editBtn;

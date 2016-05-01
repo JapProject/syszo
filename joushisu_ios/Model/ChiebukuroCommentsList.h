@@ -11,6 +11,9 @@
 @interface ChiebukuroCommentsList : BaseModel
 //用户ID
 @property (nonatomic, assign) NSInteger user_id;
+
+//是否是VIP
+@property (nonatomic) NSInteger vip_flg;
 //用户名
 @property (nonatomic, strong) NSString *user_name;
 //评论ID

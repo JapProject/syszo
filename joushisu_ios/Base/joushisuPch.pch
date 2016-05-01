@@ -110,11 +110,28 @@
 #define NAND_SPOT_ID @"403043"
 
 //*****************网址*********************//
-//前面公有url
+
+#define TestNet
+//#define RealNet
+
+#ifdef TestNet
+#define TiTleUrl @"http://api-t.syszo.com/"
+#define AdMainUrl  @"http://t.syszo.com/"//测试广告地址
+#else
 #define TiTleUrl @"http://api.syszo.com/"
-//#define TiTleUrl @"http://jss-test.nestwinds.com/"
-//#define TiTleUrl @"http://xianchang.wx.vicgoo.com/"
-//#define TiTleUrl @"http://api-t.syszo.com/"
+#define AdMainUrl  @"http://syszo.com/"//正式广告地址
+#endif
+
+////前面公有url
+//#define TiTleUrl @"http://api.syszo.com/"
+////#define TiTleUrl @"http://jss-test.nestwinds.com/"
+////#define TiTleUrl @"http://xianchang.wx.vicgoo.com/"
+////#define TiTleUrl @"http://api-t.syszo.com/"
+//#define AdMainUrl  @"http://t.syszo.com/"//测试地址
+////#define AdMainUrl  @"http://syszo.com/"//正式地址
+
+//广告
+#define getAdImage   @"index.php/ad/get_ad"
 
 //注册请求
 #define UserRegister @"index.php/login/reg"

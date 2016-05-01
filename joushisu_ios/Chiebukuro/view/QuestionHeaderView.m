@@ -31,6 +31,9 @@
         self.userImageView = [[UIImageView alloc] init];
         [self addSubview:self.userImageView];
         
+        self.isVipIcon = [[UIImageView alloc]init];
+        [self addSubview:self.isVipIcon];
+        
         self.userName = [[UILabel alloc] init];
         [self addSubview:self.userName];
         self.userName.userInteractionEnabled = YES ;
@@ -101,9 +104,18 @@
    //#warning  用户图片可能要判断 icon_user_off、on
     
     self.userImageView.image = [UIImage imageNamed:@"icon_user_off"];
-    
-    
-    [self.userName setFrame:CGRectMake(2*_userImageView.frame.origin.x+_userImageView.frame.size.width, _userImageView.frame.origin.y, WIDTH - (2*_userImageView.frame.origin.x+_userImageView.frame.size.width), _userImageView.frame.size.height)];
+     self.isVipIcon.image = [UIImage imageNamed:@"icon_vip_on"];
+  
+    if(self.model.vip_flg){
+        self.isVipIcon.frame = CGRectMake(40, 48, 25, 30);
+        [self.userName setFrame:CGRectMake(2*_userImageView.frame.origin.x+_userImageView.frame.size.width+35, _userImageView.frame.origin.y, WIDTH - (2*_userImageView.frame.origin.x+_userImageView.frame.size.width-35), _userImageView.frame.size.height)];
+        self.isVipIcon.hidden = NO;
+    }else{
+        
+        [self.userName setFrame:CGRectMake(2*_userImageView.frame.origin.x+_userImageView.frame.size.width, _userImageView.frame.origin.y, WIDTH - (2*_userImageView.frame.origin.x+_userImageView.frame.size.width), _userImageView.frame.size.height)];
+        self.isVipIcon.hidden = YES;
+    }
+
     self.userName.textColor = DarkGreen;
     self.userName.font = FONT_SIZE_6(13.f);
     self.userName.textAlignment = NSTextAlignmentLeft;
@@ -115,6 +127,8 @@
         self.userName.textColor = Yellow;
 
     }
+    
+   
     
 }
 #pragma mark 问题主题

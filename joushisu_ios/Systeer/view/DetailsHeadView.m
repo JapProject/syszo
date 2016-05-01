@@ -15,6 +15,8 @@
 @interface DetailsHeadView ()
 /// 用户头像
 @property (nonatomic, strong) UIImageView *userImage;
+
+@property (nonatomic,strong) UIImageView * isVipIcon;
 /// 用户名
 @property (nonatomic, strong) UILabel *userLabel;
 /// 日期
@@ -43,6 +45,10 @@
         
         self.userLabel = [[UILabel alloc] init];
         [self addSubview:self.userLabel];
+        
+        self.isVipIcon = [[UIImageView alloc]init];
+        [self addSubview:self.isVipIcon];
+        
         self.userLabel.userInteractionEnabled = YES ;
         UITapGestureRecognizer *userNameDidTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapDidAction)];
         [self.userLabel addGestureRecognizer:userNameDidTap];
@@ -85,6 +91,7 @@
     /// 用户图片
     [self.userImage setFrame:CGRectMake(7, 45, 15, 20)];
     self.userImage.image = [UIImage imageNamed:@"icon_user_off"];
+     self.isVipIcon.image = [UIImage imageNamed:@"icon_vip_on"];
 
     
     /// 用户名
@@ -92,6 +99,17 @@
     self.userLabel.text = self.InfoModel.user_name;
     self.userLabel.textColor = DarkGreen;
     self.userLabel.font = FONT_SIZE_6(13.f);
+    
+    if(self.InfoModel.vip_flg){
+        self.isVipIcon.frame = CGRectMake(40, 40, 25, 30);
+        [self.userLabel setFrame:CGRectMake(68, 46, WIDTH - 56, 21)];
+        self.isVipIcon.hidden = NO;
+    }else{
+        
+        [self.userLabel setFrame:CGRectMake(28, 46, WIDTH - 56, 21)];
+        self.isVipIcon.hidden = YES;
+    }
+
     //判断主贴发帖人是否是当前用户,显示不同颜色图片和name
     UserModel *user = [UserModel unpackUserInfo];
     NSString *user__id =[NSString stringWithFormat:@"%ld",(long)self.InfoModel.user_id]  ;

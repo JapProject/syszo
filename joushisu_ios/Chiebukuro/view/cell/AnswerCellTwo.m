@@ -32,6 +32,10 @@
         self.userImage.autoresizingMask = UIViewAutoresizingFlexibleRightMargin;
         [self.contentView addSubview:self.userImage];
         
+        self.isVipIcon = [[UIImageView alloc]init];
+        [self.contentView addSubview:self.isVipIcon];
+
+        
         self.userLabel = [[UILabel alloc] init];
         self.userLabel.font = FONT_SIZE_6(13.f);
         self.userLabel.autoresizingMask = UIViewAutoresizingFlexibleRightMargin;
@@ -77,6 +81,16 @@
         [self.userImage setFrame:CGRectMake(7, 25, 15, 20)];
         [self.userLabel setFrame:CGRectMake(28, 26, 142, 21)];
         [self.dayLabel setFrame:CGRectMake(CELL_WIDTH - 155, 8, 155, 21)];
+        if(self.model.vip_flg){
+           self.isVipIcon.frame = CGRectMake(40, 20, 25, 30);
+            [self.userLabel setFrame:CGRectMake(68, 26, 142, 21)];
+            self.isVipIcon.hidden = NO;
+        }else{
+            
+            [self.userLabel setFrame:CGRectMake(28, 26, 142, 21)];
+            self.isVipIcon.hidden = YES;
+        }
+
         
         
     }
@@ -108,6 +122,8 @@
     self.goodBtn.frame = CGRectMake(CELL_WIDTH - 90, self.infoLabel.frame.origin.y + self.infoLabel.frame.size.height + 8, 80, 28);
     self.userLabel.textColor = DarkGreen;
     self.userImage.image = [UIImage imageNamed:@"icon_user_off"];
+    self.isVipIcon.image = [UIImage imageNamed:@"icon_vip_on"];
+    
     //是否点过赞1没有 2点过
     if (self.model.if_good == 1) {
         [self.goodBtn setBackgroundImage:[UIImage imageNamed:@"btn_iine_off"] forState:UIControlStateNormal];

@@ -11,6 +11,8 @@
 @interface SystterInfoList : BaseModel
 //姓名
 @property (nonatomic, strong) NSString *user_name;
+
+@property (nonatomic)   NSInteger vip_flg;
 //ID
 @property (nonatomic, assign) NSInteger user_id;
 //时间

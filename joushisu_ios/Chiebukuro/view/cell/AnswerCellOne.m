@@ -24,6 +24,9 @@
         self.userImage = [[UIImageView alloc] init];
         [self.contentView addSubview:self.userImage];
         
+        self.isVipIcon = [[UIImageView alloc]init];
+        [self.contentView addSubview:self.isVipIcon];
+        
         
         self.userLabel = [[UILabel alloc] init];
         self.userLabel.font = FONT_SIZE_6(13.f);
@@ -78,7 +81,16 @@
 - (void)setUPs{
     [self.asImage setFrame:CGRectMake(7, 9, 50, 13)];
     [self.userImage setFrame:CGRectMake(7, 25, 15, 20)];
-    [self.userLabel setFrame:CGRectMake(28, 26, 142, 21)];
+    
+    if(self.model.vip_flg){
+        self.isVipIcon.frame = CGRectMake(40, 20, 25, 30);
+         [self.userLabel setFrame:CGRectMake(68, 26, 142, 21)];
+        self.isVipIcon.hidden = NO;
+    }else{
+    
+        [self.userLabel setFrame:CGRectMake(28, 26, 142, 21)];
+        self.isVipIcon.hidden = YES;
+    }
     [self.dayLabel setFrame:CGRectMake(CON_WIDTH - 155, 8, 155, 21)];
     
     self.dayLabel.text = self.model.comments_time;
@@ -102,6 +114,7 @@
  
     self.userLabel.textColor = Yellow;
     self.userImage.image = [UIImage imageNamed:@"icon_user_on"];
+    self.isVipIcon.image = [UIImage imageNamed:@"icon_vip_on"];
     
     self.editBtn.frame = CGRectMake(CON_WIDTH - 90, self.infoLabel.frame.origin.y + self.infoLabel.frame.size.height + 8, 28, 28);
     self.delBtn.frame = CGRectMake(CON_WIDTH - 50, self.infoLabel.frame.origin.y + self.infoLabel.frame.size.height + 8, 28, 28);
