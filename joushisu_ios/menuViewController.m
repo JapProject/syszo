@@ -46,14 +46,6 @@
     view.center = temp;
     [self creatView];
     
-    //广告条
-    _adScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, self.view.width, 150) delegate:self placeholderImage:[UIImage imageNamed:@"ad"]];
-    _adScrollView.autoScrollTimeInterval = 3.0;
-    _adScrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentCenter;
-    //_adScrollView.titlesGroup = titles;
-    _adScrollView.currentPageDotColor = [UIColor whiteColor]; // 自定义分页控件小圆标颜色
-    //_adScrollView.imageURLStringsGroup = self.tabArr;
-    [self.view addSubview:_adScrollView];
     
     //添加广告 kGADAdSizeBanner 替换为 GADAdSizeFromCGSize(CGSizeMake(CON_WIDTH, 50)
 //    bannerView_ = [[GADBannerView alloc] initWithAdSize:GADAdSizeFromCGSize(CGSizeMake(CON_WIDTH, 50))
@@ -66,14 +58,24 @@
 //    [self.view addSubview:bannerView_];
 //    [bannerView_ loadRequest:[GADRequest request]];
     
-    self.navigationController.navigationBar.hidden = YES;
+//    self.navigationController.navigationBar.hidden = YES;
     
-    self.ADView = [[NADView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 50, self.view.frame.size.width, 50) isAdjustAdSize:YES];
-    [_ADView setNendID:NAND_ID spotID:NAND_SPOT_ID];
-    _ADView.delegate = self;
-    [_ADView load];
-    _ADView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    [self.view addSubview:_ADView];
+//    self.ADView = [[NADView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 50, self.view.frame.size.width, 50) isAdjustAdSize:YES];
+//    [_ADView setNendID:NAND_ID spotID:NAND_SPOT_ID];
+//    _ADView.delegate = self;
+//    [_ADView load];
+//    _ADView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+//    [self.view addSubview:_ADView];
+    
+    //广告条
+    _adScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, self.view.frame.size.height - 50-64, self.view.frame.size.width, 50) delegate:self placeholderImage:[UIImage imageNamed:@"ad"]];
+    _adScrollView.autoScrollTimeInterval = 3.0;
+    _adScrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentCenter;
+    //_adScrollView.titlesGroup = titles;
+    _adScrollView.currentPageDotColor = [UIColor whiteColor]; // 自定义分页控件小圆标颜色
+    //_adScrollView.imageURLStringsGroup = self.tabArr;
+    [self.view addSubview:_adScrollView];
+
     
     [self getAdimage];
 }
@@ -112,7 +114,7 @@
 
 
 -(void)viewDidDisappear:(BOOL)animated{
-    self.navigationController.navigationBar.hidden = NO;
+//    self.navigationController.navigationBar.hidden = NO;
 }
 #pragma mark - NADViewの広告ロードが初めて成功した際に通知されます
 - (void)nadViewDidFinishLoad:(NADView *)adView {
@@ -123,9 +125,10 @@
 {
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 
-    self.automaticallyAdjustsScrollViewInsets = NO;
+//    self.automaticallyAdjustsScrollViewInsets = NO;
     //创建菜单
-    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 150, self.view.width, self.view.height-150-50) style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
+
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     //除去线
