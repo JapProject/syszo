@@ -24,6 +24,7 @@
     
     GADBannerView *bannerView_;
     SDCycleScrollView *_adScrollView;
+    NSMutableArray * _urlArray;
 }
 @property (strong, nonatomic) NADView *ADView;
 @end
@@ -34,6 +35,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     NSString *str = [APService registrationID];
+    _urlArray = [NSMutableArray array];
     //添加菜单图片
     self.tabArr = [NSMutableArray arrayWithObjects:@"nav1",@"nav2",@"nav3",@"nav4",@"nav5",nil];
     self.tabArrOn = [NSMutableArray arrayWithObjects:@"nav1_on",@"nav2_on",@"nav3_on",@"nav4_on",@"nav5_on",nil];
@@ -50,7 +52,7 @@
     _adScrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentCenter;
     //_adScrollView.titlesGroup = titles;
     _adScrollView.currentPageDotColor = [UIColor whiteColor]; // 自定义分页控件小圆标颜色
-    _adScrollView.imageURLStringsGroup = self.tabArr;
+    //_adScrollView.imageURLStringsGroup = self.tabArr;
     [self.view addSubview:_adScrollView];
     
     //添加广告 kGADAdSizeBanner 替换为 GADAdSizeFromCGSize(CGSizeMake(CON_WIDTH, 50)
@@ -90,6 +92,7 @@
             NSDictionary * tempDic = responseObject[@"data"];
            // for (int i=0; i<tempArray.count; i++) {
                 [imageArray addObject:[NSString stringWithFormat:@"%@%@",AdMainUrl,tempDic[@"ad_img"]]];
+            [_urlArray addObject:tempDic[@"link_url"]];
             //}
             _adScrollView.imageURLStringsGroup = imageArray;
             if (imageArray.count ==1) {
@@ -278,7 +281,8 @@ return YES;
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index
 {
     NSLog(@"---点击了第%ld张图片", (long)index);
-   
+    NSString * url = _urlArray[index];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
 }
 
 
