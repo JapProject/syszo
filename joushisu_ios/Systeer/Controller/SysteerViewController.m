@@ -336,7 +336,10 @@ static NSInteger _count3 = 2;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.UserName.text = systList.user_name;
     cell.infoLabel.text = systList.content;
-    
+    //设置会员图标
+
+
+
     //    UILabel设置行间距等属性：
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithString:cell.infoLabel.text];
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc]init];
@@ -346,6 +349,8 @@ static NSInteger _count3 = 2;
     
 
     cell.timeLabel.text = systList.time;
+    
+    cell.list = systList;
     
     return cell;
 }

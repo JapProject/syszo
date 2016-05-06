@@ -14,4 +14,5 @@
 @property (nonatomic, strong) NSString *user_name;
 @property (nonatomic, strong) NSString *time;
 @property (nonatomic, assign) NSInteger user_id;
+@property (nonatomic) BOOL vip_flg;
 @end

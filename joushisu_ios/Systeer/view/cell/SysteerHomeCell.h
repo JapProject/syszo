@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "SystterList.h"
 @interface SysteerHomeCell : UITableViewCell
 @property (strong, nonatomic)UILabel *infoLabel;
 @property (strong, nonatomic)UILabel *UserName;
 @property (strong, nonatomic)UILabel *timeLabel;
+@property (nonatomic,strong) UIImageView * isVipIcon;
+@property (nonatomic,strong) SystterList * list;
+
 @end
