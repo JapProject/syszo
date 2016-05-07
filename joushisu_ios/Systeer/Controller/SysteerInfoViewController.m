@@ -408,7 +408,7 @@
                 EnterController *enter = [[EnterController alloc] init];
                 AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
                 enter.comeBackBlock = ^(){
-                    [self creatDataListWithBird:bird_id page:@"1"];
+                  //  [self creatDataListWithBird:bird_id page:@"1"];
                 };
                 [appDelegate.navi presentViewController:enter animated:YES completion:^{
                     
