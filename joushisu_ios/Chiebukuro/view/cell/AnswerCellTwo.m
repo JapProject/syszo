@@ -137,7 +137,7 @@
     self.likeNumber.font = FONT_SIZE_7(13.f);
     CGSize size = [self sizeWithString:self.likeNumber.text font:self.likeNumber.font];
     self.goodBtn.frame = CGRectMake(CELL_WIDTH - size.width - 15 - 85, self.infoLabel.frame.origin.y + self.infoLabel.frame.size.height + 8, 80, 28);
-    self.likeNumber.frame = CGRectMake(CELL_WIDTH - size.width - 15, self.infoLabel.frame.origin.y + self.infoLabel.frame.size.height + 8, size.width, 28);
+    self.likeNumber.frame = CGRectMake(/*CELL_WIDTH*/[UIScreen mainScreen].bounds.size.width - size.width - 15, self.infoLabel.frame.origin.y + self.infoLabel.frame.size.height + 8, size.width, 28);
     
 //    [self.line setFrame:CGRectMake(0, self.goodBtn.bottom + 5 - 1, CELL_WIDTH, 1)];
     [self.line setFrame:CGRectMake(0, self.goodBtn.bottom + 5 - 1, CELL_WIDTH, 1)];
