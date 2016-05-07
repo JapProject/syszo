@@ -182,6 +182,7 @@
         AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
         enter.comeBackBlock = ^(){
             /// 没做操作时刷新视图
+            [self.dataArray removeAllObjects];
             [self creatDataListWithBird:[NSString stringWithFormat:@"%ld", (long)self.systeerList.bird_id] page:@"1"];
             [self creatDataBird:[NSString stringWithFormat:@"%ld", (long)self.systeerList.bird_id]];
         };
@@ -408,7 +409,9 @@
                 EnterController *enter = [[EnterController alloc] init];
                 AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
                 enter.comeBackBlock = ^(){
-                  //  [self creatDataListWithBird:bird_id page:@"1"];
+                    //刷新回复列表的时候，清空数组
+                    [self.dataArray removeAllObjects];
+                    [self creatDataListWithBird:bird_id page:@"1"];
                 };
                 [appDelegate.navi presentViewController:enter animated:YES completion:^{
                     
